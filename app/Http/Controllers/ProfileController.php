@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
   public function index()
   {
-    $profiles = Profile::Paginate(10);
+    $profiles = Profile::Paginate(14);
     return view('profiles.index', compact('profiles'));
   }
   public function show(Request $request)
