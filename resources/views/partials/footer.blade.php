@@ -1,0 +1,1 @@
+<p class="text-center text-white p-6 bg-dark">All Right Reserved From Laravel Project &copy; 2023</p>
