@@ -23,9 +23,14 @@ class ProfileController extends Controller
   }
   public function store(Request $request)
   {
+    $name =  $request->name;
+    Profile::create([
+      'name' =>  $request->name,
+      'email' => $request->email,
+      'password' => $request->password,
+      'bio' => $request->bio,
+    ]);
 
-    Profile::create($request->post());
-
-    return redirect()->route('profiles.index');
+    return redirect()->route('profiles.index')->with('message', 'You are logged in successfully ' . $name . '!!!');
   }
 }

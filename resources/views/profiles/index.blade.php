@@ -2,10 +2,14 @@
     | Profile
 @endsection
 <x-master>
-
+   
     <div class="container">
         <div class="row my-4">
-            <div class="col-md-9">hi</div>
+            <div class="col-md-9">
+              @if (session('message'))
+                <x-alert-message type="success">{{session('message')}}</x-alert-message>
+              @endif
+            </div>
             <div class="col-md-3 rounded-4 shadow-lg bg-white">
                 <h2 class="h4 px-3 pt-4 pb-3 text-center">Discover Some Friends</h2>
                 <table class="table">
