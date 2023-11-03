@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileRequest;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -22,18 +23,12 @@ class ProfileController extends Controller
   {
     return view('profiles.create');
   }
-  public function store(Request $request)
+  public function store(ProfileRequest $request)
   {
     $name =  $request->name;
-    $data = $request->validate([
-      'name' =>  'required',
-      'email' => 'required | email | unique:profiles',
-      'password' => 'required |confirmed',
-      'bio' => 'required',
-    ]);
+    $data = $request->validated();
     $data['password'] = Hash::make($request->password);
     Profile::create($data);
-
     return redirect()->route('profiles.index')->with('message', 'You are logged in Successfully ' . $name . '!!!');
   }
 }
