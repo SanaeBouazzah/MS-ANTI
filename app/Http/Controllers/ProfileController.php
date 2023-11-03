@@ -9,12 +9,12 @@ class ProfileController extends Controller
 {
   public function index()
   {
-    $profiles = Profile::Paginate(14);
+    // $profiles = Profile::Paginate(14);
+    $profiles = Profile::orderBy('created_at', 'desc')->paginate(14);
     return view('profiles.index', compact('profiles'));
   }
-  public function show(Request $request)
+  public function show(Profile $profile)
   {
-    $profile = Profile::findOrFail($request->id);
     return view('profiles.show', compact('profile'));
   }
   public function create()
