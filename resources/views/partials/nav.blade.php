@@ -16,9 +16,6 @@
         <li class="nav-item">
           <a class="nav-link mx-2" href="{{route('settings.index')}}">Informations</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link mx-2" href="{{route('profiles.create')}}">Sign Up</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Company
@@ -28,6 +25,9 @@
             <li><a class="dropdown-item" href="#">About Us</a></li>
             <li><a class="dropdown-item" href="#">Contact us</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="{{route('login.index')}}">Register</a>
         </li>
       </ul>
     </div>
