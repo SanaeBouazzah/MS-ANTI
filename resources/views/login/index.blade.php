@@ -2,14 +2,19 @@
     | Login In 
 @endsection
 <x-master>
-  <div class="flex justify-center items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-    <div style="width:600px;" class="bg-white p-5 rounded">
-      <h2 class="text-center mb-3 h2">Sign Up in MS-ANTI</h2>
-      <form method="POST" action="{{route('profiles.store')}}">
+<div class="mt-4">
+  @if (session('message'))
+  <x-alert-message type="success">{{session('message')}}</x-alert-message>
+@endif
+</div>
+  <div class="flex justify-center items-center my-5 bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+    <div style="width:500px; margin-bottom:140px;" class="bg-white p-5 rounded">
+      <h2 class="text-center mb-3 h2">Login In MS-ANTI</h2>
+      <form method="POST" action="{{route('login.store')}}">
         @csrf
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="{{old('email')}}">
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
           @error('email')
           <p class="text-danger mb-2">{{$message}}</p>
          @enderror
