@@ -16,9 +16,11 @@ class LoginController extends Controller
       $values = ['email' => $email, 'password' => $password] ;
       if(Auth::attempt($values)){
         $request->session()->regenerate();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message','You are logged in Successfully!!!');
       }else{
-        return back()->with('message', 'Something is Wrong Check your email is correct!!!!!');
+        return back()->withErrors([
+          'email' => 'Email Or Password is incorrect'
+        ])->onlyInput('email');
       }
     }
 }
