@@ -27,10 +27,10 @@
          @enderror
         </div>
         <div class="form-group">
-          <button class="btn btn-dark mt-4 rounded-0 px-5 py-3 form-control">Sign Up</button>
+          <button class="btn btn-dark mt-4 rounded-0 px-5 py-3 form-control">Log In</button>
         </div>
         <div class="form-group">
-          <a href="{{route('profiles.create')}}" class="btn btn-light mt-4 rounded-0 px-5 py-3 form-control text-dark border-dark">Log In</a>
+          <a href="{{route('profiles.create')}}" class="btn btn-light mt-4 rounded-0 px-5 py-3 form-control text-dark border-dark">Sign Up</a>
         </div>
       </form>
     </div>

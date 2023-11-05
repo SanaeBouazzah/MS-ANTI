@@ -42,6 +42,9 @@
           <div class="form-group">
             <button class="btn btn-dark mt-4 rounded-0 px-5 py-3 form-control">Sign Up</button>
           </div>
+          <div class="form-group">
+            <a href="{{route('login.index')}}" class="btn btn-light text-dark border-dark mt-4 rounded-0 px-5 py-3 form-control">Log In</a>
+          </div>
         </form>
       </div>
   </div>  
