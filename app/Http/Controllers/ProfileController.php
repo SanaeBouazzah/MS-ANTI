@@ -31,6 +31,19 @@ class ProfileController extends Controller
     Profile::create($data);
     return redirect()->route('profiles.index')->with('message', 'You are logged in Successfully ' . $name . '!!!');
   }
+  public function edit(Profile $profile)
+  {
+    return view('profiles.edit', compact('profile'));
+  }
+  public function update(ProfileRequest $request, Profile $profile)
+  {
+    // $name =  $request->name;
+    // $data = $request->validated();
+    // $data['password'] = Hash::make($request->password);
+    // $profile->update($data)();
+    // return redirect()->route('profiles.index')->with('message', 'You Updated Your Informations in Successfully ' . $name . '!!!');
+    dd($profile);
+  }
   public function destroy(Profile $profile)
   {
     $profile->delete();

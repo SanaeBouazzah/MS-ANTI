@@ -10,7 +10,7 @@
         <h4 class="card-title">{{$profile->name}}</h4>
         <p class="card-text">{{$profile->bio}}</p>
         <div class="flex justify-content-between">
-          <a href="#" class="btn btn-dark rounded-0 px-5 mt-3 mx-2">Modify Informations</a>
+          <a href="{{route('profiles.edit', $profile)}}" class="btn btn-dark rounded-0 px-5 mt-3 mx-2">Modify Informations</a>
           <form action="{{route('profiles.destroy', $profile)}}" method="POST">
           @method('DELETE')
           @csrf
