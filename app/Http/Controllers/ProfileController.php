@@ -37,12 +37,11 @@ class ProfileController extends Controller
   }
   public function update(ProfileRequest $request, Profile $profile)
   {
-    // $name =  $request->name;
-    // $data = $request->validated();
-    // $data['password'] = Hash::make($request->password);
-    // $profile->update($data)();
-    // return redirect()->route('profiles.index')->with('message', 'You Updated Your Informations in Successfully ' . $name . '!!!');
-    dd($profile);
+    $name =  $request->name;
+    $data = $request->validated();
+    $data['password'] = Hash::make($request->password);
+    $profile->fill($data)->save();
+    return redirect()->route('profiles.index')->with('message', 'You Updated Your Informations Successfully ' . $name . '!!!');
   }
   public function destroy(Profile $profile)
   {

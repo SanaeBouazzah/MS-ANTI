@@ -10,14 +10,14 @@
           @method('PUT')
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" value="{{$profile->name}}">
+            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" value="{{old('name', $profile->name)}}">
             @error('name')
                 <p class="text-danger mb-2">{{$message}}</p>
             @enderror
           </div>
           <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="{{$profile->email}}">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="{{old('email', $profile->email)}}">
             @error('email')
             <p class="text-danger mb-2">{{$message}}</p>
            @enderror
@@ -35,7 +35,7 @@
           </div>
           <div class="form-group">
             <label for="bio">Bio</label>
-            <textarea class="form-control" id="bio" name="bio" rows="3" placeholder="write what's on your mind...">{{$profile->bio}}</textarea>
+            <textarea class="form-control" id="bio" name="bio" rows="3" placeholder="write what's on your mind...">{{old('bio', $profile->bio)}}</textarea>
             @error('bio')
             <p class="text-danger mb-2">{{$message}}</p>
              @enderror
