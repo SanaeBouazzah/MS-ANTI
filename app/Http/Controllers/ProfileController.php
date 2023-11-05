@@ -31,4 +31,9 @@ class ProfileController extends Controller
     Profile::create($data);
     return redirect()->route('profiles.index')->with('message', 'You are logged in Successfully ' . $name . '!!!');
   }
+  public function destroy(Profile $profile)
+  {
+    $profile->delete();
+    return redirect()->route('profiles.index')->with('message', 'You Have Deleted Profile Succefully!!!');
+  }
 }

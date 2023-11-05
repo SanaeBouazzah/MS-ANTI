@@ -4,13 +4,18 @@
 <x-master>
 
   <div class="m-5">
-    <div class="card" style="width:400px">
+    <div class="card" style="width:500px">
       <img class="card-img-top" src="https://picsum.photos/id/237/200/100" alt="Card image">
       <div class="card-body">
         <h4 class="card-title">{{$profile->name}}</h4>
         <p class="card-text">{{$profile->bio}}</p>
-        <div class="text-center">
-          <a href="#" class="btn btn-dark rounded-0 px-5 mt-3">Modify Informations</a>
+        <div class="flex justify-content-between">
+          <a href="#" class="btn btn-dark rounded-0 px-5 mt-3 mx-2">Modify Informations</a>
+          <form action="{{route('profiles.destroy', $profile)}}" method="POST">
+          @method('DELETE')
+          @csrf
+          <button class="btn btn-dark rounded-0 px-5 mt-3 mx-2">Delete</button>
+        </form>
         </div>
       </div>
     </div>
