@@ -521,7 +521,7 @@
         }
 
         html {
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         .dropdown-toggle::after {

@@ -42,7 +42,9 @@ class ProfileController extends Controller
     $name =  $request->name;
     $data = $request->validated();
     $data['password'] = Hash::make($request->password);
-    $data['image']= Storage::disk('public')->put('public', $request->file('image'));
+    if(($request->file('image')) !== NULL){
+      $data['image']= Storage::disk('public')->put('public', $request->file('image'));
+    }
     $profile->fill($data)->save();
     return redirect()->route('profiles.index')->with('message', 'You Updated Your Informations Successfully ' . $name . '!!!');
   }

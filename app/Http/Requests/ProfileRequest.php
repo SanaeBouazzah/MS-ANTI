@@ -21,7 +21,7 @@ class ProfileRequest extends FormRequest
         return [
           'name' =>  'required',
           'email' => 'required | email',
-          'image' => 'required | image ',
+          'image' => 'image',
           'password' => 'required |confirmed',
           'bio' => 'required',
         ];
