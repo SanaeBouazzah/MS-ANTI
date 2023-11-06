@@ -19,14 +19,17 @@
                 </li>
                 @auth
                     <li class="nav-item dropdown">
-                      <button class=" nav-link border-dark dropdown-toggle text-gray" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{auth()->user()->name}}
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('login.logout') }}">Logout</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
+                        <button class=" nav-link border-dark dropdown-toggle text-gray" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{{ '../storage/' . auth()->user()->image }}"
+                                    style="display: block; border-radius:50%; object-fit:cover;" width="30px"
+                                    height="30px">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('login.logout') }}">Logout</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
                     </li>
                 @endauth
                 @guest

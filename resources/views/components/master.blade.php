@@ -519,7 +519,7 @@
         .rounded-lg {
             border-radius: 0.5rem
         }
-
+      .dropdown-toggle::after{ border-top: 0em solid};
         .rounded-full {
             border-radius: 9999px
         }
