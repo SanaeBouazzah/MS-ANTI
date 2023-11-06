@@ -29,7 +29,9 @@ class ProfileController extends Controller
     $name =  $request->name;
     $data = $request->validated();
     $data['password'] = Hash::make($request->password);
-    $data['image']= Storage::disk('public')->put('public', $request->file('image'));
+    if(($request->file('image')) !== NULL){
+      $data['image']= Storage::disk('public')->put('images', $request->file('image'));
+    }
     Profile::create($data);
     return redirect()->route('profiles.index')->with('message', 'You are logged in Successfully ' . $name . '!!!');
   }
@@ -43,7 +45,7 @@ class ProfileController extends Controller
     $data = $request->validated();
     $data['password'] = Hash::make($request->password);
     if(($request->file('image')) !== NULL){
-      $data['image']= Storage::disk('public')->put('public', $request->file('image'));
+      $data['image']= Storage::disk('public')->put('images', $request->file('image'));
     }
     $profile->fill($data)->save();
     return redirect()->route('profiles.index')->with('message', 'You Updated Your Informations Successfully ' . $name . '!!!');
