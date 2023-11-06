@@ -22,13 +22,14 @@
                         <button class=" nav-link border-dark dropdown-toggle text-gray" type="button"
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="{{ '../storage/' . auth()->user()->image }}"
-                                    style="display: block; border-radius:50%; object-fit:cover;" width="30px"
-                                    height="30px">
+                                    style="display: block; border-radius:50%; object-fit:cover;" width="25px"
+                                    height="20px">
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{ route('login.logout') }}">Logout</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-menu bg-dark border-none rounded-0 py-3" aria-labelledby="dropdownMenuButton" style="
+                        position: absolute; left: -130px;  top: 60px;" >
+                            <a class="dropdown-item py-1" href="{{ route('login.logout') }}">Logout</a>
+                            <a class="dropdown-item py-1" href="#">Another action</a>
+                            <a class="dropdown-item py-1" href="#">Something else here</a>
                         </div>
                     </li>
                 @endauth
