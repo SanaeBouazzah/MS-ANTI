@@ -2,15 +2,18 @@
     | Profile
 @endsection
 <x-master>
-   
-    <div class="container">
+    <div class="container ">
         <div class="row my-4">
-            <div class="col-md-9">
+            <div class="col-md-8 rounded-4 shadow-lg bg-white p-3 column-spacing" >
               @if (session('message'))
                 <x-alert-message type="success">{{session('message')}}</x-alert-message>
               @endif
+              <div>
+                hi
+              </div>
             </div>
-            <div class="col-md-3 rounded-4 shadow-lg bg-white px-3">
+            <div class="col-md-1"></div>
+            <div class="col-md-3 rounded-4 shadow-lg bg-white p-3">
                 <h2 class="h4 pt-4 pb-3 text-center">Discover Some Friends</h2>
                     @foreach ($profiles as $profile)
                     <ul>

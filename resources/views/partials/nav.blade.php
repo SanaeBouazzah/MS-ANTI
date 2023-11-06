@@ -20,13 +20,15 @@
                 @auth
                     <li class="nav-item dropdown">
                         <button class=" nav-link border-dark dropdown-toggle text-gray" type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ '../storage/' . auth()->user()->image }}"
-                                    style="display: block; border-radius:50%; object-fit:cover;" width="25px"
-                                    height="20px">
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                             aria-expanded="false">
+                            <div style="width:32px; height:32px;">
+                              <img src="{{ '../storage/' . auth()->user()->image }}"
+                                    style="display: block; border-radius:50%; object-fit:cover; width:100%; height:100%;">
+                            </div>
                         </button>
                         <div class="dropdown-menu bg-dark border-none rounded-0 py-3" aria-labelledby="dropdownMenuButton" style="
-                        position: absolute; left: -130px;  top: 60px;" >
+                        position: absolute; left: -130px;  top: 50px;" >
                             <a class="dropdown-item py-1" href="{{ route('login.logout') }}">Logout</a>
                             <a class="dropdown-item py-1" href="#">Another action</a>
                             <a class="dropdown-item py-1" href="#">Something else here</a>
