@@ -41,6 +41,14 @@
              @enderror
           </div>
           <div class="form-group">
+            <label for="image">Image</label>
+            {{-- <div><img src="{{asset('../storage/'.$profile->image)}}" alt=""></div> --}}
+            <input type="file" name="image" id="image" class="form-control" value="{{old('image', $profile->image)}}">
+            @error('image')
+            <p class="text-danger mb-2">{{$message}}</p>
+             @enderror
+          </div>
+          <div class="form-group">
             <button class="btn btn-dark mt-4 rounded-0 px-5 py-3 form-control">Modify Informations</button>
           </div>
         </form>

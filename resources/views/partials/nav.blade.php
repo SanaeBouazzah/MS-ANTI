@@ -23,7 +23,7 @@
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                              aria-expanded="false">
                             <div style="width:32px; height:32px;">
-                              <img src="{{ '../storage/' . auth()->user()->image }}"
+                              <img src="{{asset('../storage/'.auth()->user()->image)}}"
                                     style="display: block; border-radius:50%; object-fit:cover; width:100%; height:100%;">
                             </div>
                         </button>
