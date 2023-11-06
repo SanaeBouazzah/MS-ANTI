@@ -5,7 +5,7 @@
 
   <div class="m-5">
     <div class="card" style="width:500px">
-      <img class="card-img-top" src="https://picsum.photos/id/237/200/100" alt="Card image">
+      <img class="card-img-top" src="{{"../storage/$profile->image"}}" alt="Card image" style="width:500px; height:300px;object-fit:cover;display:block;">
       <div class="card-body">
         <h4 class="card-title">{{$profile->name}}</h4>
         <p class="card-text">{{$profile->bio}}</p>

@@ -5,7 +5,7 @@
   <div class="flex justify-center items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
       <div style="width:600px;" class="bg-white p-5 rounded">
         <h2 class="text-center mb-3 h2">Sign Up in MS-ANTI</h2>
-        <form method="POST" action="{{route('profiles.store')}}">
+        <form method="POST" action="{{route('profiles.store')}}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label for="name">Name</label>
@@ -36,6 +36,13 @@
             <label for="bio">Bio</label>
             <textarea class="form-control" id="bio" name="bio" rows="3" placeholder="write what's on your mind...">{{old('name')}}</textarea>
             @error('bio')
+            <p class="text-danger mb-2">{{$message}}</p>
+             @enderror
+          </div>
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" name="image" id="image" class="form-control">
+            @error('image')
             <p class="text-danger mb-2">{{$message}}</p>
              @enderror
           </div>

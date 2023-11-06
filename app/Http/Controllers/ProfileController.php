@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileRequest;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\ProfileRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -28,6 +29,7 @@ class ProfileController extends Controller
     $name =  $request->name;
     $data = $request->validated();
     $data['password'] = Hash::make($request->password);
+    $data['image']= Storage::disk('public')->put('public', $request->file('image'));
     Profile::create($data);
     return redirect()->route('profiles.index')->with('message', 'You are logged in Successfully ' . $name . '!!!');
   }
