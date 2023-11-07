@@ -18,7 +18,7 @@ Route::get('/login/logout', [LoginController::class, 'logout'])->name('login.log
 
 
 Route::resource('profiles', ProfileController::class);
-Route::resource('ads', PublicationController::class);
+Route::resource('posts', PublicationController::class);
 
 
 
