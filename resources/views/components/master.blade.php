@@ -523,7 +523,10 @@
         html {
             overflow-x: hidden;
         }
-
+        .touch:hover{
+          transition: .5s linear;
+          transform: scale(1.2);
+        }
         .dropdown-toggle::after {
             border-top: 0em solid;
             display: none;

@@ -18,8 +18,8 @@ class Profile extends Model
       'bio'
     ];
 
-    public function getImageAttribute($value){
-      return $value??'images/doc3.jpg';
+     function getImageAttribute($value){
+      return $value??'images/inconnu.jpeg';
     }
 
 
