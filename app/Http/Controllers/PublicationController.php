@@ -9,7 +9,7 @@ class PublicationController extends Controller
 {
     public function index()
     {
-        //
+        return 'hi pub';
     }
     public function create()
     {

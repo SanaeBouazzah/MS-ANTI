@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
+            $table->string('titre', '150');
+            $table->text('body');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
