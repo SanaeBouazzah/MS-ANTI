@@ -13,8 +13,9 @@
               </div>
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-3 rounded-4 shadow-lg bg-white p-3">
-                <h2 class="h4 pt-4 pb-3 text-center">Discover Some Friends</h2>
+            <div class="col-md-3 parent">
+                <div class="rounded-4 shadow-lg bg-white p-3 to_scroll">
+                  <h2 class="h4 pt-4 pb-3 text-center">Discover Some Friends</h2>
                     @foreach ($profiles as $profile)
                     <ul>
                       <a href="{{ route('profiles.show', $profile) }}" class="bg-light flex justify-content-between my-2 rounded px-3 py-2 touch">
@@ -23,7 +24,7 @@
                       </a>
                     </ul>
                     @endforeach
-                <div class="mx-5 my-4">{{ $profiles->links() }}</div>
+                </div>
             </div>
         </div>
     </div>

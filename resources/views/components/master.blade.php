@@ -527,6 +527,15 @@
           transition: .5s linear;
           transform: scale(1.2);
         }
+        .parent{
+          width:'fit-content';
+          height: 700px;
+        }
+        .to_scroll{
+          overflow-y: scroll;
+          height: 'fit-content';
+          max-height:98vh;
+        }
         .dropdown-toggle::after {
             border-top: 0em solid;
             display: none;

@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Publication;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
@@ -23,5 +24,6 @@ Route::get('/login/logout', [LoginController::class, 'logout'])->name('login.log
 // Route::delete('/profiles/{profile}', [ProfileController::class, 'destroy'])->name('profiles.destroy');
 
 Route::resource('profiles', ProfileController::class);
+Route::resource('publication', PublicationController::class);
 
 Route::get('/settings', [InformationController::class, 'index'])->name('settings.index');
