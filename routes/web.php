@@ -17,8 +17,8 @@ Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 Route::get('/login/logout', [LoginController::class, 'logout'])->name('login.logout');
 
 
-Route::resource('profiles', ProfileController::class);
-Route::resource('posts', PublicationController::class);
+Route::resource('profiles', ProfileController::class)->middleware('auth');
+Route::resource('posts', PublicationController::class)->middleware('auth');
 
 
 
