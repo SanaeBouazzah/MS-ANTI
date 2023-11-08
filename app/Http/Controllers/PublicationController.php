@@ -17,9 +17,9 @@ class PublicationController extends Controller
     {
         return view('posts.create');
     }
-    public function store(Request $request)
+    public function store(PublicationRequest $request)
     {
-       $posts = $request->post();
+       $posts = $request->validated();
         Publication::create($posts);
         return redirect()->route('posts.index')->with('message', 'You Have Created Post Successfully !!!!');
     }

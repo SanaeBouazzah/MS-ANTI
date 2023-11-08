@@ -2,9 +2,11 @@
     | Posts
 @endsection
 <x-master>
-    @if (session('message'))
+    <div class="mt-2">
+      @if (session('message'))
         <x-alert-message type="success">{{ session('message') }}</x-alert-message>
-    @endif
+      @endif
+    </div>
     <table class="table">
       <tr>
           <th>ID</th>
