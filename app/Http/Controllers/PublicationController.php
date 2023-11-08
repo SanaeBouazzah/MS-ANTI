@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class PublicationController extends Controller
 {
     public function index()
-    {
-        return view('posts.index');
+    {  
+        $posts = Publication::all();
+        return view('posts.index', compact('posts'));
     }
     public function create()
     {
@@ -26,6 +27,7 @@ class PublicationController extends Controller
          'image' => $image
        ];
         Publication::create($posts);
+        return redirect()->route('posts.index')->with('message', 'You Have Created Post Successfully !!!!');
     }
     public function show(Publication $publication)
     {
