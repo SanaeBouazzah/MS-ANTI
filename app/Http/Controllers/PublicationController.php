@@ -17,7 +17,15 @@ class PublicationController extends Controller
     }
     public function store(Request $request)
     {
-        //
+       $titre =  $request->titre; 
+       $body = $request->body; 
+       $image = $request->image; 
+       $posts = [
+        'titre' => $titre,
+         'body'=> $body,
+         'image' => $image
+       ];
+        Publication::create($posts);
     }
     public function show(Publication $publication)
     {
