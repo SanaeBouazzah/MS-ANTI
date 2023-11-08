@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PublicationRequest;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,7 @@ class PublicationController extends Controller
 {
     public function index()
     {  
-        $posts = Publication::all();
+      $posts = Publication::all();
         return view('posts.index', compact('posts'));
     }
     public function create()
@@ -18,14 +19,7 @@ class PublicationController extends Controller
     }
     public function store(Request $request)
     {
-       $titre =  $request->titre; 
-       $body = $request->body; 
-       $image = $request->image; 
-       $posts = [
-        'titre' => $titre,
-         'body'=> $body,
-         'image' => $image
-       ];
+       $posts = $request->post();
         Publication::create($posts);
         return redirect()->route('posts.index')->with('message', 'You Have Created Post Successfully !!!!');
     }

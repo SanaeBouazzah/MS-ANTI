@@ -6,12 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PublicationRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +19,9 @@ class PublicationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'require',
+            'body'=> 'required',
+            'image'=> 'required|image | mimes:png,jpeg,jpg'
         ];
     }
 }
