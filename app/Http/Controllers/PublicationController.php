@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PublicationRequest;
 use App\Models\Publication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\PublicationRequest;
 
 class PublicationController extends Controller
 {
@@ -20,6 +21,7 @@ class PublicationController extends Controller
     public function store(PublicationRequest $request)
     {
        $posts = $request->validated();
+       $posts['image'] = Storage::disk('public')->put('images', $request->file('image'));
         Publication::create($posts);
         return redirect()->route('posts.index')->with('message', 'You Have Created Post Successfully !!!!');
     }
