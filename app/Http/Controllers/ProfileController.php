@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
+  public function __construct()
+  {
+     $this->middleware('guest')->except(['index', 'edit', 'show', 'store', 'update', 'destroy']);
+  }
   public function index()
   {
     $profiles =  Profile::orderBy('created_at', 'desc')->get();
@@ -28,8 +32,8 @@ class ProfileController extends Controller
     $name =  $request->name;
     $data = $request->validated();
     $data['password'] = Hash::make($request->password);
-    if(($request->file('image')) !== NULL){
-      $data['image']= Storage::disk('public')->put('images', $request->file('image'));
+    if (($request->file('image')) !== NULL) {
+      $data['image'] = Storage::disk('public')->put('images', $request->file('image'));
     }
     Profile::create($data);
     return redirect()->route('profiles.index')->with('message', 'You are logged in Successfully ' . $name . '!!!');
@@ -43,8 +47,8 @@ class ProfileController extends Controller
     $name =  $request->name;
     $data = $request->validated();
     $data['password'] = Hash::make($request->password);
-    if(($request->file('image')) !== NULL){
-      $data['image']= Storage::disk('public')->put('images', $request->file('image'));
+    if (($request->file('image')) !== NULL) {
+      $data['image'] = Storage::disk('public')->put('images', $request->file('image'));
     }
     $profile->fill($data)->save();
     return redirect()->route('profiles.index')->with('message', 'You Updated Your Informations Successfully ' . $name . '!!!');

@@ -12,7 +12,7 @@
                     <a class="nav-link mx-2 active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" aria-current="page" href="{{route('publications.index')}}">Posts</a>
+                    <a class="nav-link mx-2" aria-current="page" href="{{ route('publications.index') }}">Posts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-2" href="{{ route('profiles.index') }}">Profiles</a>
@@ -23,18 +23,26 @@
                 @auth
                     <li class="nav-item dropdown">
                         <button class=" nav-link border-dark dropdown-toggle text-gray" type="button"
-                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                             aria-expanded="false">
-                            <div style="width:32px; height:32px;">
-                              <img src="{{asset('../storage/'.auth()->user()->image)}}"
-                                    style="display: block; border-radius:50%; object-fit:cover; width:100%; height:100%;">
-                            </div>
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @if (auth()->user()->image)
+                                <div style="width:32px; height:32px;">
+                                    <img src="{{ asset('../storage/' . auth()->user()->image) }}"
+                                        style="display: block; border-radius:50%; object-fit:cover; width:100%; height:100%;">
+                                </div>
+                            @else
+                                <div style="width:32px; height:32px;">
+                                    <img src="{{ asset('../storage/images/inconnu.jpeg') }}"
+                                        style="display: block; border-radius:50%; object-fit:cover; width:100%; height:100%;">
+                                </div>
+                            @endif
                         </button>
-                        <div class="dropdown-menu bg-dark border-none rounded-0 py-3" aria-labelledby="dropdownMenuButton" style="
-                        position: absolute; left: -130px;  top: 50px;" >
-                            <a class="dropdown-item py-1" href="{{ route('login.logout') }}">Logout</a>
-                            <a class="dropdown-item py-1" href="#">Another action</a>
+                        <div class="dropdown-menu bg-dark border-none rounded-0 py-3" aria-labelledby="dropdownMenuButton"
+                            style="
+                        position: absolute; left: -130px;  top: 50px;">
+                            <a class="dropdown-item py-1"
+                                href="{{ route('profiles.show', auth()->user()->id) }}">{{ auth()->user()->name }}</a>
                             <a class="dropdown-item py-1" href="#">Something else here</a>
+                            <a class="dropdown-item py-1" href="{{ route('login.logout') }}">Logout</a>
                         </div>
                     </li>
                 @endauth
