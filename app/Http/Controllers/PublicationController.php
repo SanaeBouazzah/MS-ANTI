@@ -21,7 +21,9 @@ class PublicationController extends Controller
     public function store(PublicationRequest $request)
     {
        $publications = $request->validated();
-       $publications['image'] = Storage::disk('public')->put('images', $request->file('image'));
+       if($request->file('image') !== NULL){
+        $publications['image'] = Storage::disk('public')->put('images', $request->file('image'));
+      }
         Publication::create($publications);
         return redirect()->route('publications.index')->with('message', 'You Have Created Post Successfully !!!!');
     }
@@ -36,12 +38,15 @@ class PublicationController extends Controller
     public function update(PublicationRequest $request, Publication $publication)
     {
       $publications = $request->validated();
-      $publications['image'] = Storage::disk('public')->put('images', $request->file('image'));
+      if($request->file('image') !== NULL){
+        $publications['image'] = Storage::disk('public')->put('images', $request->file('image'));
+      }
        $publication->fill($publications)->save();
-       return redirect()->route('publications.index')->with('message', 'You Have Created Post Successfully !!!!');
+       return redirect()->route('publications.index')->with('message', 'You Have Updated Post Successfully !!!!');
     }
     public function destroy(Publication $publication)
     {
-        //
+      $publication->delete();
+      return redirect()->route('publications.index')->with('message', 'You Have Deleted Post Successfully !!!!');
     }
 }

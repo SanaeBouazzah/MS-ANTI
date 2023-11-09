@@ -21,7 +21,7 @@ class PublicationRequest extends FormRequest
         return [
             'titre' => 'required',
             'body'=> 'required',
-            'image'=> 'required|image | mimes:png,jpeg,jpg'
+            'image'=> 'image | mimes:png,jpeg,jpg'
         ];
     }
 

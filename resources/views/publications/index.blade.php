@@ -25,7 +25,7 @@
                         </div>
                         <div class="flex justify-content-between">
                           <a href="{{route('publications.edit', $publication)}}" class="btn btn-dark rounded-0 px-4 mt-3 mx-2">Edit Post</a>
-                          <form action="" method="POST">
+                          <form action="{{route('publications.destroy', $publication)}}" method="POST">
                           @method('DELETE')
                           @csrf
                           <button class="btn btn-dark rounded-0 px-5 mt-3 mx-2">Delete</button>
