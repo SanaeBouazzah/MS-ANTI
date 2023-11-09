@@ -17,8 +17,10 @@
             @foreach ($publications as $publication)
                 <div class="my-2 col-md">
                     <div class="card pb-3" style="width:300px">
+                        @if ($publication->image)
                         <img class="card-img-top" src="{{ asset('../storage/' . $publication->image) }}" alt="Card image"
-                            style="width:500px; height:300px;object-fit:cover;display:block;">
+                        style="width:500px; height:300px;object-fit:cover;display:block;">
+                        @endif
                         <div class="card-body">
                             <h4 class="card-title">{{ $publication->titre }}</h4>
                             <p class="card-text">{{ $publication->body }}</p>

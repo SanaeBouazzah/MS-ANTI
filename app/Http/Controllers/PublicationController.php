@@ -11,7 +11,7 @@ class PublicationController extends Controller
 {
     public function index()
     {  
-      $publications = Publication::all();
+      $publications = Publication::latest()->get();
         return view('publications.index', compact('publications'));
     }
     public function create()

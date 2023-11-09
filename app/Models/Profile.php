@@ -15,6 +15,7 @@ class Profile extends Model
       'email',
       'image',
       'password',
+      'remember_token',
       'bio'
     ];
 
