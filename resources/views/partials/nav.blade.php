@@ -12,7 +12,7 @@
                     <a class="nav-link mx-2 active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" aria-current="page" href="{{route('posts.index')}}">Posts</a>
+                    <a class="nav-link mx-2" aria-current="page" href="{{route('publications.index')}}">Posts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-2" href="{{ route('profiles.index') }}">Profiles</a>

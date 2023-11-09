@@ -20,7 +20,7 @@ Route::get('/login/logout', [LoginController::class, 'logout'])->name('login.log
 
 
 Route::resource('profiles', ProfileController::class);
-Route::resource('posts', PublicationController::class)->middleware('auth');
+Route::resource('publications', PublicationController::class)->middleware('auth');
 
 
 

@@ -24,7 +24,7 @@
                             <p class="card-text">{{ $publication->body }}</p>
                         </div>
                         <div class="flex justify-content-between">
-                          <a href="{{route('posts.edit', $publication)}}" class="btn btn-dark rounded-0 px-4 mt-3 mx-2">Edit Post</a>
+                          <a href="{{route('publications.edit', $publication)}}" class="btn btn-dark rounded-0 px-4 mt-3 mx-2">Edit Post</a>
                           <form action="" method="POST">
                           @method('DELETE')
                           @csrf

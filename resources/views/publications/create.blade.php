@@ -5,7 +5,7 @@
   <div class="flex justify-center items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
       <div style="width:600px;" class="bg-white p-5 rounded">
         <h2 class="text-center mb-3 h2">What's on your Mind?</h2>
-        <form method="POST" action="{{route('posts.store')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('publications.store')}}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label for="titre">Titre</label>
