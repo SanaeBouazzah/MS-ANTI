@@ -33,9 +33,12 @@ class PublicationController extends Controller
     {
         return view('publications.edit', compact('publication'));
     }
-    public function update(Request $request, Publication $publication)
+    public function update(PublicationRequest $request, Publication $publication)
     {
-        //
+      $publications = $request->validated();
+      $publications['image'] = Storage::disk('public')->put('images', $request->file('image'));
+       $publication->fill($publications)->save();
+       return redirect()->route('publications.index')->with('message', 'You Have Created Post Successfully !!!!');
     }
     public function destroy(Publication $publication)
     {
