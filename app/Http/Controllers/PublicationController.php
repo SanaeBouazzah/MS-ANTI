@@ -11,19 +11,19 @@ class PublicationController extends Controller
 {
     public function index()
     {  
-      $posts = Publication::all();
-        return view('posts.index', compact('posts'));
+      $publications = Publication::all();
+        return view('publications.index', compact('publications'));
     }
     public function create()
     {
-        return view('posts.create');
+        return view('publications.create');
     }
     public function store(PublicationRequest $request)
     {
-       $posts = $request->validated();
-       $posts['image'] = Storage::disk('public')->put('images', $request->file('image'));
-        Publication::create($posts);
-        return redirect()->route('posts.index')->with('message', 'You Have Created Post Successfully !!!!');
+       $publications = $request->validated();
+       $publications['image'] = Storage::disk('public')->put('images', $request->file('image'));
+        Publication::create($publications);
+        return redirect()->route('publications.index')->with('message', 'You Have Created Post Successfully !!!!');
     }
     public function show(Publication $publication)
     {
@@ -31,7 +31,7 @@ class PublicationController extends Controller
     }
     public function edit(Publication $publication)
     {
-        //
+        return view('publications.edit', compact('publication'));
     }
     public function update(Request $request, Publication $publication)
     {
