@@ -18,21 +18,26 @@
                 <div class="my-2 col-md">
                     <div class="card pb-3" style="width:300px">
                         @if ($publication->image)
-                        <img class="card-img-top" src="{{ asset('../storage/' . $publication->image) }}" alt="Card image"
-                        style="width:500px; height:300px;object-fit:cover;display:block;">
+                            <img class="card-img-top" src="{{ asset('../storage/' . $publication->image) }}"
+                                alt="Card image" style="width:500px; height:300px;object-fit:cover;display:block;">
                         @endif
                         <div class="card-body">
                             <h4 class="card-title">{{ $publication->titre }}</h4>
                             <p class="card-text">{{ $publication->body }}</p>
                         </div>
-                        <div class="flex justify-content-between">
-                          <a href="{{route('publications.edit', $publication)}}" class="btn btn-dark rounded-0 px-4 mt-3 mx-2">Edit Post</a>
-                          <form action="{{route('publications.destroy', $publication)}}" method="POST">
-                          @method('DELETE')
-                          @csrf
-                          <button class="btn btn-dark rounded-0 px-5 mt-3 mx-2">Delete</button>
-                        </form>
-                        </div>
+                        @auth
+                            @if (auth()->user()->id === $publication->profile_id)
+                                <div class="flex justify-content-between">
+                                    <a href="{{ route('publications.edit', $publication) }}"
+                                        class="btn btn-dark rounded-0 px-4 mt-3 mx-2">Edit Post</a>
+                                    <form action="{{ route('publications.destroy', $publication) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class="btn btn-dark rounded-0 px-5 mt-3 mx-2">Delete</button>
+                                    </form>
+                                </div>
+                            @endif
+                        @endauth
                     </div>
                 </div>
             @endforeach

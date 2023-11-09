@@ -12,7 +12,7 @@ class ProfileController extends Controller
 {
   public function index()
   {
-    $profiles = Profile::all();
+    $profiles =  Profile::orderBy('created_at', 'desc')->get();
     return view('profiles.index', compact('profiles'));
   }
   public function show(Profile $profile)

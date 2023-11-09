@@ -13,5 +13,6 @@ class Publication extends Model
       'titre',
       'body',
       'image',
+      'profile_id',
     ];
 }
