@@ -38,6 +38,11 @@
                                 </div>
                             @endif
                         @endauth
+                        <div class="flex align-items-center">
+                          <img src="{{asset('../storage/' . $publication->profile?->image)}}" alt="image"
+                           width="50px" height="50px" class="m-2" style="border-radius:50%; object-fit:cover;">
+                           <p>{{$publication->profile?->name}}</p>
+                        </div>
                     </div>
                 </div>
             @endforeach

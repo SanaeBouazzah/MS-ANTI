@@ -15,4 +15,8 @@ class Publication extends Model
       'image',
       'profile_id',
     ];
+
+    public function profile() {
+      return $this->belongsTo(Profile::class);
+    }
 }
