@@ -19,9 +19,11 @@ class Profile extends Model
       'bio'
     ];
 
-     function getImageAttribute($value){
+    public  function getImageAttribute($value){
       return $value??'images/inconnu.jpeg';
     }
 
-
+    public function publications(){
+      return $this->hasMany(Publication::class);
+    }
 }
