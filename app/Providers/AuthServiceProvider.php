@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Profile;
 use App\Models\Publication;
+use Illuminate\Auth\GenericUser;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -21,11 +22,8 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerPolicies();
-        if(Auth()::id() !== $publication->profile_id){
-          abort(404);
-        }
-        Gate::define('update-publication', function(Profile $profile, Publication $publication){
-          return $profile->id !== $publication->profile_id;
+        Gate::define('update-publication', function(GenericUser $profile, Publication $publication){
+          return $profile->id === $publication->profile_id;
         });
     }
 }

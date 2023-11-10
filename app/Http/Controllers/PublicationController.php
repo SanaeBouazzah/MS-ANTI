@@ -36,7 +36,7 @@ class PublicationController extends Controller
     }
     public function edit(Publication $publication)
     {
-       Gate::allows('update-publication', $publication);
+      Gate::authorize('update-publication', $publication);
         return view('publications.edit', compact('publication'));
     }
     public function update(PublicationRequest $request, Publication $publication)
