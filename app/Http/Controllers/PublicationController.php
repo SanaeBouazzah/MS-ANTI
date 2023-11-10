@@ -41,6 +41,7 @@ class PublicationController extends Controller
     }
     public function update(PublicationRequest $request, Publication $publication)
     {
+      Gate::authorize('update-publication', $publication);
       $publications = $request->validated();
       if($request->file('image') !== NULL){
         $publications['image'] = Storage::disk('public')->put('images', $request->file('image'));
