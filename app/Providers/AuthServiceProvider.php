@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use App\Models\Profile;
+use App\Models\Publication;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -16,11 +18,14 @@ class AuthServiceProvider extends ServiceProvider
         //
     ];
 
-    /**
-     * Register any authentication / authorization services.
-     */
     public function boot(): void
     {
-        //
+        $this->registerPolicies();
+        if(Auth()::id() !== $publication->profile_id){
+          abort(404);
+        }
+        Gate::define('update-publication', function(Profile $profile, Publication $publication){
+          return $profile->id !== $publication->profile_id;
+        });
     }
 }

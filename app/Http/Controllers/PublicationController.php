@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PublicationRequest;
 
@@ -35,6 +36,7 @@ class PublicationController extends Controller
     }
     public function edit(Publication $publication)
     {
+       Gate::allows('update-publication', $publication);
         return view('publications.edit', compact('publication'));
     }
     public function update(PublicationRequest $request, Publication $publication)

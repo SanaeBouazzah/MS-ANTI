@@ -38,10 +38,11 @@
                                 </div>
                             @endif
                         @endauth
-                        <div class="flex align-items-center">
-                          <img src="{{asset('../storage/' . $publication->profile?->image)}}" alt="image"
-                           width="50px" height="50px" class="m-2" style="border-radius:50%; object-fit:cover;">
-                           <p>{{$publication->profile?->name}}</p>
+                        <div class="flex align-items-center position-relative">
+                          <img src="{{asset('../storage/' . $publication->profile->image)}}" alt="image"
+                           width="30px" height="30px" class="m-2 rounded-circle">
+                           <p>{{$publication->profile->name}}</p>
+                           <a href="{{route('profiles.show', $publication->profile->id)}}" class="stretched-link"></a>
                         </div>
                     </div>
                 </div>
