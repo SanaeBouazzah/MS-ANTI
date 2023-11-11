@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\User;
 use App\Models\publication;
 use Illuminate\Auth\Access\Response;
+use Illuminate\Auth\GenericUser;
 
 class PublicationPolicy
 {
@@ -29,15 +30,15 @@ class PublicationPolicy
      */
     public function create(User $user): bool
     {
-      return $profile->id === $publication->profile_id;
+      //
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, publication $publication): bool
+    public function update(GenericUser $user, publication $publication): bool
     {
-        //
+       return $user->id === $publication->profile_id;
     }
 
     /**

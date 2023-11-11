@@ -18,8 +18,9 @@ return [
         // ],
 
         'users' => [
-            'driver' => 'database',
+            'driver' => 'eloquent',
             'table' => 'profiles',
+            'model' => Profile::class,
         ],
     ],
     'passwords' => [
