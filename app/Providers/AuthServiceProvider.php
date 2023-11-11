@@ -16,14 +16,11 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        'App\Models\Publication' => \PublicationPolicy::class,
     ];
 
     public function boot(): void
     {
         $this->registerPolicies();
-        Gate::define('update-publication', function(GenericUser $profile, Publication $publication){
-          return $profile->id === $publication->profile_id;
-        });
     }
 }
