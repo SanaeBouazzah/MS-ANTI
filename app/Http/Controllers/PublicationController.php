@@ -34,11 +34,9 @@ class PublicationController extends Controller
     {
         //
     }
-    public function edit(Publication $publication, Request $request)
+    public function edit(Publication $publication)
     {
-       if($request->user()->can('update', $publication)){
-        abort(403);
-       }
+        $this->authorize('update', $publication);
         return view('publications.edit', compact('publication'));
     }
     public function update(PublicationRequest $request, Publication $publication)
