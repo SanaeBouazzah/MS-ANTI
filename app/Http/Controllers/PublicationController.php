@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PublicationRequest;
+use App\Policies\PublicationPolicy;
 
 class PublicationController extends Controller
 {

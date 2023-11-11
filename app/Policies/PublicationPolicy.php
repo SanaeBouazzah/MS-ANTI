@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Profile;
 use App\Models\publication;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Auth\GenericUser;

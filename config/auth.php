@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Profile;
+
 return [
     'defaults' => [
         'guard' => 'web',
@@ -20,7 +22,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'table' => 'profiles',
-            'model' => Profile::class,
+            'model' => Profile::class
         ],
     ],
     'passwords' => [
