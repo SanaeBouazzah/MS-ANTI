@@ -8,12 +8,10 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $profiles = Profile::all();
+        return response()->json($profiles);
     }
 
     /**
