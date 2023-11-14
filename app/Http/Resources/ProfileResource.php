@@ -13,7 +13,9 @@ class ProfileResource extends JsonResource
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
-    {
-        return parent::toArray($request);
+    { 
+        $values  = parent::toArray($request);
+        $values['image'] =url('storage/'.$values['image']);
+         dd($values);
     }
 }

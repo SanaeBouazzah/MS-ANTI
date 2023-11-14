@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProfileResource;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
@@ -19,7 +20,8 @@ class ProfileController extends Controller
     }
     public function show(Profile $profile)
     {
-        // return $profile;
+        return new ProfileResource($profile);
+        dd($profile);
     }
     public function update(Request $request, Profile $profile)
     {
