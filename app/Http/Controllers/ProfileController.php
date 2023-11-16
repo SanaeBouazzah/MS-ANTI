@@ -20,11 +20,12 @@ class ProfileController extends Controller
     $profiles =  Profile::orderBy('created_at', 'desc')->get();
     return view('profiles.index', compact('profiles'));
   }
-  public function show(Profile $profile)
+  public function show(string $id)
   {
-
-    Cache::put('profile',serialize($profile),20);
-    
+    $prefix = 'profile_'.$id;
+    $profile = Cache::remember($prefix, 10, function () use ($id) {
+      return Profile::findOrFail($id);
+    });
     return view('profiles.show', compact('profile'));
   }
   public function create()
