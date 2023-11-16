@@ -6,6 +6,7 @@ use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileRequest;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
@@ -21,6 +22,9 @@ class ProfileController extends Controller
   }
   public function show(Profile $profile)
   {
+
+    Cache::put('profile',serialize($profile),20);
+    
     return view('profiles.show', compact('profile'));
   }
   public function create()
