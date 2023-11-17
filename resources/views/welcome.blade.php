@@ -7,6 +7,8 @@
     <x-alert-message type="success">{{session('message')}}</x-alert-message>
     @endif
   </div>
-    <x-users-table :users="$users" />
-
+  <div class="row m-3">
+    <div class="col">jkfjkfjkdjkjf</div>
+    <div class="col"><img src="pexels-brian-jr-asare-13221796.jpg" alt="image"></div>
+  </div>
 </x-master>

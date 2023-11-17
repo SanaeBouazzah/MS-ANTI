@@ -9,7 +9,6 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-      $users = User::all();
-      return view('welcome', compact('users'));
+      return view('welcome');
     }
 }
