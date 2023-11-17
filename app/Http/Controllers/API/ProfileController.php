@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Cache;
@@ -14,11 +15,11 @@ class ProfileController extends Controller
   private const CACHE_KEY = 'profiles_api';
   public function index()
   {
-    $profiles = Cache::remember(self::CACHE_KEY, 10, function (){
-      return ProfileResource::collection(Profile::all());
-    });
-    
-    return $profiles;
+    // $profiles = Cache::remember(self::CACHE_KEY, 10, function (){
+    //   return Profile::all();
+    // });
+    dd(DB::table('profiles')->join());
+    // return $profiles;
   }
   public function store(Request $request)
   {
