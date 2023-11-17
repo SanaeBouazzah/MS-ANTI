@@ -8,4 +8,6 @@
     @endif
   </div>
     <x-users-table :users="$users" />
+
+    <h1>Views: {{$compteur}}</h1>
 </x-master>
