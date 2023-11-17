@@ -58,6 +58,8 @@
                 @endforeach
             </div>
         </div>
+        <div>
+          <p class="bg-dark text-white px-4 py-2 d-inline rounded-5 m-3">Views : {{$compteur}}</p>
+        </div>
     </div>
-
 </x-master>
