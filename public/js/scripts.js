@@ -1,10 +1,21 @@
-/*!
-* Start Bootstrap - Business Casual v7.0.9 (https://startbootstrap.com/theme/business-casual)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-business-casual/blob/master/LICENSE)
-*/
-// Highlights current date on contact page
+
 window.addEventListener('DOMContentLoaded', event => {
     const listHoursArray = document.body.querySelectorAll('.list-hours li');
     listHoursArray[new Date().getDay()].classList.add(('today'));
 })
+
+
+// Get the container element
+var btnContainer = document.querySelector("navbar-nav li");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("nav-link");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
