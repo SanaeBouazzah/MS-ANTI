@@ -42,7 +42,7 @@ class ProfileController extends Controller
       $data['image'] = Storage::disk('public')->put('images', $request->file('image'));
     }
     Profile::create($data);
-    return redirect()->route('profiles.index')->with('message', 'You are logged in Successfully ' . $name . '!!!');
+    return redirect()->route('login.index')->with('message', 'You Can Now Sign Up ' . $name . '!!!');
   }
   public function edit(Profile $profile)
   {
