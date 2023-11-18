@@ -11,11 +11,14 @@ var btnContainer = document.querySelector("navbar-nav li");
 // Get all buttons with class="btn" inside the container
 var btns = btnContainer.getElementsByClassName("nav-link");
 
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+var navigation =document.querySelector('navbar-nav');
+var openbtn = document.querySelector('.menu-btn');
+var closebtn = document.querySelector('.close-btn');
+
+openbtn.addEventListener("click", () => {
+    navigation.classList.add("active");
+});
+
+closebtn.addEventListener("click", () => {
+    navigation.classList.remove("active");
+});
