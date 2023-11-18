@@ -8,10 +8,17 @@
 
     <title>MS-ANTI @yield('title')</title>
 
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
+    {{-- <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" /> --}}
 
     <!-- Styles -->
     <style>
@@ -524,28 +531,34 @@
         html {
             overflow-x: hidden;
         }
-        .touch:hover{
-          transition: .5s linear;
-          transform: scale(1.2);
+
+        .touch:hover {
+            transition: .5s linear;
+            transform: scale(1.2);
         }
-        .parent{
-          width:'fit-content';
-          height: 700px;
+
+        .parent {
+            width: 'fit-content';
+            height: 700px;
         }
-        .to_scroll{
-          overflow-y: scroll;
-          height: 'fit-content';
-          max-height:98vh;
+
+        .to_scroll {
+            overflow-y: scroll;
+            height: 'fit-content';
+            max-height: 98vh;
         }
+
         .dropdown-toggle::after {
             border-top: 0em solid;
             display: none;
-        } 
-        .dropdown-item{
-          color:white;
-          padding-left:25px;
-          padding-right:25px;
         }
+
+        .dropdown-item {
+            color: white;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
         .dropdown-item:focus,
         .dropdown-item:hover {
             color: black;
@@ -864,19 +877,19 @@
 </head>
 
 <body class="antialiased">
-    <main>
-        <div class="bg-gray-100 min-h-screen">
-            @include('partials.nav')
+    <!-- Navigation-->
+    @include('partials.nav')
+   <main>
+     {{$slot}}
+   </main>
 
-            <div>
-                {{ $slot }}
-            </div>
+    @include('partials.footer')
 
-            @include('partials.footer')
-        </div>
-    </main>
-    <h3>hello</h3>
 
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{asset('js/scripts.js')}}"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

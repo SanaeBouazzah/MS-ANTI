@@ -18,7 +18,7 @@
                     <a class="nav-link mx-2" href="{{ route('profiles.index') }}">Profiles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" href="{{ route('settings.index') }}">Informations</a>
+                    <a class="nav-link mx-2" href="{{ route('settings.index') }}">Products</a>
                 </li>
                 @auth
                     <li class="nav-item dropdown">
