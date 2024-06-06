@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="css/profile.css">
 @section('title')
     | Profile
 @endsection
 <x-master>
     <div class="container ">
         <div class="row my-4">
-            <div class="col-md-8 rounded-4 shadow-lg bg-white column-spacing">
+            <div class="col-md-8 column-spacing">
                 @if (session('message'))
                     <x-alert-message type="success">{{ session('message') }}</x-alert-message>
                 @endif
@@ -12,56 +13,22 @@
                     <section class="page-section cta">
                         <div class="container">
                             <div class="row">
-                                <div class="col-xl-9 mx-auto">
-                                    <div class="cta-inner bg-faded text-center rounded">
-                                        <h2 class="section-heading mb-5">
-                                            <span class="section-heading-upper">Come On In</span>
-                                            <span class="section-heading-lower">We're Open</span>
-                                        </h2>
-                                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                                            <li class="list-unstyled-item list-hours-item d-flex">
-                                                Sunday
-                                                <span class="ms-auto">Closed</span>
-                                            </li>
-                                            <li class="list-unstyled-item list-hours-item d-flex">
-                                                Monday
-                                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                            </li>
-                                            <li class="list-unstyled-item list-hours-item d-flex">
-                                                Tuesday
-                                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                            </li>
-                                            <li class="list-unstyled-item list-hours-item d-flex">
-                                                Wednesday
-                                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                            </li>
-                                            <li class="list-unstyled-item list-hours-item d-flex">
-                                                Thursday
-                                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                            </li>
-                                            <li class="list-unstyled-item list-hours-item d-flex">
-                                                Friday
-                                                <span class="ms-auto">7:00 AM to 8:00 PM</span>
-                                            </li>
-                                            <li class="list-unstyled-item list-hours-item d-flex">
-                                                Saturday
-                                                <span class="ms-auto">9:00 AM to 5:00 PM</span>
-                                            </li>
-                                        </ul>
-                                        <p class="address mb-5">
-                                            <em>
-                                                <strong>1116 Orchard Street</strong>
-                                                <br />
-                                                Golden Valley, Minnesota
-                                            </em>
-                                        </p>
-                                        <p class="mb-0">
-                                            <small><em>Call Anytime</em></small>
-                                            <br />
-                                            (317) 585-8468
-                                        </p>
+                                <h1>Profiles</h1>
+                                @for ($i = 0; $i < 8; $i++)
+                                @if (isset($profiles[$i]))
+                                    <div class="col-12 col-sm-6 col-md-3">
+                                        <div class="our-team">
+                                            <div class="picture">
+                                                <img class="img-fluid" src="{{ '../storage/' . $profiles[$i]->image }}">
+                                            </div>
+                                            <div class="team-content">
+                                                <h3 class="name">{{ $profiles[$i]->name }}</h3>
+                                                <a href="{{ route('profiles.show', $profiles[$i]->id) }}" class="stretched-link"></a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
+                            @endfor
                             </div>
                         </div>
                     </section>

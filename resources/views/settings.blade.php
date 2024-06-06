@@ -1,59 +1,224 @@
+<link rel="stylesheet" href="css/style1.css">
 @section('title')
     | Products
 @endsection
 <x-master>
+    <div class="container">
+      <h1>BEST PRODUCTS</h1>
+    <input type="radio" name="slider" id="s1" checked>
+    <input type="radio" name="slider" id="s2">
+    <input type="radio" name="slider" id="s3">
+    <input type="radio" name="slider" id="s4">
+    <input type="radio" name="slider" id="s5">
+
+
+    <div class="cards">
+      <label for="s1" id="slide1">
+        <div class="card">
+          <div class="image">
+            <img src="assets/img/download__5_-removebg-preview.png" alt="">
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">Big Name</span>
+            <span class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Vitae doloribus tempore minima tempora.</span>
+              <a href="/details" class="btn-details">details</a>
+              <div class="actions">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-bookmark"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+          </div>
+        </div>
+      </label>
+      <label for="s2" id="slide2">
+        <div class="card">
+          <div class="image">
+            <img src="assets/img/Lenovo_AIO-removebg-preview.png" alt="">
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">Big Name</span>
+            <span class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Vitae doloribus tempore minima tempora.</span>
+              <a href="/details" class="btn-details">details</a>
+              <div class="actions">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-bookmark"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+          </div>
+        </div>
+      </label>
+      <label for="s3" id="slide3">
+        <div class="card">
+          <div class="image">
+            <img src="assets/img/Mkeke_for_iPhone_14_Pro_Max_Case_Clear__Not_Yellowing_Phone_Case_for_iPhone_14_Pro_Max_Clear_with_Slim_Cover___Shockproof_Bumper_2022-removebg-preview.png" alt="">
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">Big Name</span>
+            <span class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Vitae doloribus tempore minima tempora.</span>
+              <a href="/details" class="btn-details">details</a>
+              <div class="actions">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-bookmark"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+          </div>
+        </div>
+      </label>
+      <label for="s4" id="slide4">
+        <div class="card">
+          <div class="image">
+            <img src="assets/img/Toutalouer_Voiture.jpg" alt="">
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">Big Name</span>
+            <span class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Vitae doloribus tempore minima tempora.</span>
+              <a href="/details" class="btn-details">details</a>
+              <div class="actions">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-bookmark"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+          </div>
+        </div>
+      </label>
+      <label for="s5" id="slide5">
+        <div class="card">
+          <div class="image">
+            <img src="assets/img/Watch-removebg-preview.png" alt="">
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="infos">
+            <span class="name">Big Name</span>
+            <span class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Vitae doloribus tempore minima tempora.</span>
+              <a href="/details" class="btn-details">details</a>
+              <div class="actions">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-bookmark"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+          </div>
+        </div>
+      </label>
+    </div>
+
+  </div>
   <section class="page-section">
-    <div class="container">
-        <div class="product-item">
-            <div class="product-item-title d-flex">
-                <div class="bg-faded p-5 d-flex ms-auto rounded">
-                    <h2 class="section-heading mb-0">
-                        <span class="section-heading-upper">Blended to Perfection</span>
-                        <span class="section-heading-lower">Coffees & Teas</span>
-                    </h2>
-                </div>
-            </div>
-            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/products-01.jpg" alt="..." />
-            <div class="product-item-description d-flex me-auto">
-                <div class="bg-faded p-5 rounded"><p class="mb-0">We take pride in our work, and it shows. Every time you order a beverage from us, we guarantee that it will be an experience worth having. Whether it's our world famous Venezuelan Cappuccino, a refreshing iced herbal tea, or something as simple as a cup of speciality sourced black coffee, you will be coming back for more.</p></div>
-            </div>
+    <h1>Sound Essentials</h1>
+    <div class="cards">
+      <div class="card">
+
+        <div class="imgBox">
+          <img src="assets/img/img1.png" alt="mouse corsair" class="mouse">
         </div>
-    </div>
-</section>
-<section class="page-section">
-    <div class="container">
-        <div class="product-item">
-            <div class="product-item-title d-flex">
-                <div class="bg-faded p-5 d-flex me-auto rounded">
-                    <h2 class="section-heading mb-0">
-                        <span class="section-heading-upper">Delicious Treats, Good Eats</span>
-                        <span class="section-heading-lower">Bakery & Kitchen</span>
-                    </h2>
-                </div>
-            </div>
-            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/products-02.jpg" alt="..." />
-            <div class="product-item-description d-flex ms-auto">
-                <div class="bg-faded p-5 rounded"><p class="mb-0">Our seasonal menu features delicious snacks, baked goods, and even full meals perfect for breakfast or lunchtime. We source our ingredients from local, oragnic farms whenever possible, alongside premium vendors for specialty goods.</p></div>
-            </div>
+      
+        <div class="contentBox">
+          <h3>Mouse Corsair M65</h3>
+          <h2 class="price">61.<small>98</small> €</h2>
+          <a href="#" class="buy">Buy Now</a>
         </div>
-    </div>
-</section>
-<section class="page-section">
-    <div class="container">
-        <div class="product-item">
-            <div class="product-item-title d-flex">
-                <div class="bg-faded p-5 d-flex ms-auto rounded">
-                    <h2 class="section-heading mb-0">
-                        <span class="section-heading-upper">From Around the World</span>
-                        <span class="section-heading-lower">Bulk Speciality Blends</span>
-                    </h2>
-                </div>
-            </div>
-            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/products-03.jpg" alt="..." />
-            <div class="product-item-description d-flex me-auto">
-                <div class="bg-faded p-5 rounded"><p class="mb-0">Travelling the world for the very best quality coffee is something take pride in. When you visit us, you'll always find new blends from around the world, mainly from regions in Central and South America. We sell our blends in smaller to large bulk quantities. Please visit us in person for more details.</p></div>
-            </div>
+      
+      </div>
+      <div class="card">
+
+        <div class="imgBox">
+          <img src="assets/img/img2.png" alt="mouse corsair" class="mouse">
         </div>
+      
+        <div class="contentBox">
+          <h3>Mouse Corsair M65</h3>
+          <h2 class="price">61.<small>98</small> €</h2>
+          <a href="#" class="buy">Buy Now</a>
+        </div>
+      
+      </div>
+      <div class="card">
+
+        <div class="imgBox">
+          <img src="assets/img/img3.png" alt="mouse corsair" class="mouse">
+        </div>
+      
+        <div class="contentBox">
+          <h3>Mouse Corsair M65</h3>
+          <h2 class="price">61.<small>98</small> €</h2>
+          <a href="#" class="buy">Buy Now</a>
+        </div>
+      
+      </div>
     </div>
-</section>
+    <div class="cards">
+      <div class="card">
+
+        <div class="imgBox">
+          <img src="assets/img/img4.png" alt="mouse corsair" class="mouse">
+        </div>
+      
+        <div class="contentBox">
+          <h3>Mouse Corsair M65</h3>
+          <h2 class="price">61.<small>98</small> €</h2>
+          <a href="#" class="buy">Buy Now</a>
+        </div>
+      
+      </div>
+      <div class="card">
+
+        <div class="imgBox">
+          <img src="assets/img/img5.png" alt="mouse corsair" class="mouse">
+        </div>
+      
+        <div class="contentBox">
+          <h3>Mouse Corsair M65</h3>
+          <h2 class="price">61.<small>98</small> €</h2>
+          <a href="#" class="buy">Buy Now</a>
+        </div>
+      
+      </div>
+      <div class="card">
+
+        <div class="imgBox">
+          <img src="assets/img/img6.png" alt="mouse corsair" class="mouse">
+        </div>
+      
+        <div class="contentBox">
+          <h3>Mouse Corsair M65</h3>
+          <h2 class="price">61.<small>98</small> €</h2>
+          <a href="#" class="buy">Buy Now</a>
+        </div>
+      
+      </div>
+    </div>
+  </section>
 </x-master>

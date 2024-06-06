@@ -24,7 +24,7 @@ Route::resource('publications', PublicationController::class)->middleware('auth'
 
 
 
-Route::get('/settings', [InformationController::class, 'index'])->name('settings.index');
+Route::get('/products', [InformationController::class, 'index'])->name('settings.index');
 
 Route::get('/cookie/get', function(Request $request){
   dd($request->cookie('age'));

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use App\Mail\ProfileMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
@@ -42,7 +44,7 @@ class ProfileController extends Controller
       $data['image'] = Storage::disk('public')->put('images', $request->file('image'));
     }
     Profile::create($data);
-    return redirect()->route('login.index')->with('message', 'You Can Now Sign Up ' . $name . '!!!');
+    return redirect()->route('login.index')->with('message', 'You Can Now Log In ' . $name . '!!!');
   }
   public function edit(Profile $profile)
   {

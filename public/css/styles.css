@@ -10922,15 +10922,18 @@ p {
   }
 }
 
-.cta {
+/* .cta {
   padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: rgba(230, 167, 86, 0.9);
-}
+} */
 .cta .cta-inner {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
+}
+.cta h1{
+  font-weight: bold;
+  font-size: 40px;
+  padding:25px 0;
 }
 .cta .cta-inner:before {
   border-radius: 0.5rem;
