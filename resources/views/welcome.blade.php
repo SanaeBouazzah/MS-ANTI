@@ -93,7 +93,7 @@
             <div class="carousel-item active">
                 <div class="container">
                     <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last image-x">
                             <img class="img-fluid" src="./assets/img/download__5_-removebg-preview.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
@@ -112,6 +112,7 @@
                                     <a rel="sponsored" class="text-success" href="https://icons8.com/"
                                         target="_blank">Icons 8</a>.
                                 </p>
+                                <div class="btn"><a href="">More Services</a></div>
                             </div>
                         </div>
                     </div>
@@ -120,7 +121,7 @@
             <div class="carousel-item">
                 <div class="container">
                     <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last image-x">
                             <img class="img-fluid" src="./assets/img/banner_img_02.jpg" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
@@ -132,6 +133,7 @@
                                     You are <strong>not permitted</strong> to re-distribute the template ZIP file in any
                                     kind of template collection websites.
                                 </p>
+                                <div class="btn"><a href="">More Services</a></div>
                             </div>
                         </div>
                     </div>
@@ -140,7 +142,7 @@
             <div class="carousel-item">
                 <div class="container">
                     <div class="row p-5">
-                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last image-x">
                             <img class="img-fluid" src="./assets/img/banner_img_03.jpg" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
@@ -152,6 +154,7 @@
                                     If you wish to support TemplateMo, please make a small contribution via PayPal or
                                     tell your friends about our website. Thank you.
                                 </p>
+                                <div class="btn"><a href="">More Services</a></div>
                             </div>
                         </div>
                     </div>
